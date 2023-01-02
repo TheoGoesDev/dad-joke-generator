@@ -33,6 +33,7 @@ type Joke struct {
 	Status int    `json:"status"`
 }
 
+// getRandomJoke sends the url request
 func getRandomJoke() {
 	url := "https://icanhazdadjoke.com/"
 	responseBytes := getJokeData(url)
@@ -45,6 +46,7 @@ func getRandomJoke() {
 	fmt.Println(string(joke.Joke))
 }
 
+// getJokeData constructs the request
 func getJokeData(baseAPI string) []byte {
 	request, err := http.NewRequest(
 		http.MethodGet,
